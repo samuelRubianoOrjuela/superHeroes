@@ -253,10 +253,17 @@ data.forEach((hero) => {
 
 	const info = document.createElement("div");
 	const name = document.createElement("span");
-	const button = document.createElement("button");
+    const check = document.createElement("input")
+    check.setAttribute('type', 'checkbox')
+    check.id = `check_${hero.class}`
+	check.classList.add("checkbox");
+    const label = document.createElement("label")
+    label.setAttribute('for', `check_${hero.class}`)
+	const button = document.createElement("span");
+	button.classList.add('button', `button_${hero.class}`)
+    button.innerHTML = "ver";
 	info.classList.add("info");
 	name.innerHTML = `${hero.name}`;
-	button.innerHTML = "ver";
 
 	//
 
@@ -277,9 +284,11 @@ data.forEach((hero) => {
 
 	//
 
-	info.append(name, button);
+    label.append(button);
+	info.append(name, check, label);
 	card.append(image, info);
 	window.append(windowImage, windowText);
 	back.append(window);
 	container.append(card, back);
 });
+

@@ -6,8 +6,10 @@
 body {
     padding: 5vh 10vw;
     background-color: #7FC7D9;
-    background-image: url(../images/dc/aquaman.png);
-} 
+}
+.checkbox {
+    /* display: none; */
+}
 .title {
     margin: 15px 20px;
     display: flex;
@@ -29,7 +31,7 @@ i {
     font-size: 30px;
     color: lightgray;
 }
-button {
+.button {
     background-color: yellow;
     border-style: none;
     border-radius: 5px;
