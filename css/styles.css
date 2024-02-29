@@ -121,4 +121,7 @@ body {
     .window--image{
         background-size: 70%;
     }
+    .window--text{
+        font-size: 90%;
+    }
 }
