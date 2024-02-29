@@ -8,7 +8,7 @@ body {
     background-color: #7FC7D9;
 }
 .checkbox {
-    /* display: none; */
+    display: none;
 }
 .title {
     margin: 15px 20px;
@@ -27,21 +27,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 15px;
 }
-i {
-    font-size: 30px;
-    color: lightgray;
-}
-.button {
-    background-color: yellow;
-    border-style: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 .card {
     padding: 5% 5% 0;
-    width: 90%;
     height: 420px;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,26 +43,32 @@ i {
     background-position: center;
     background-repeat: no-repeat;
 }
-.info,
-.info button {
-    font-size: 120%;
-}
 .info {
-    width: 100%;
-    height: 10%;
-    color: white;
+    width: 90%;
+    height: 15%;
+    font-size: 18px;
     color: #0F1035;
-    /* background-color: #0F1035; */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 40%;
 }
-/* .info span{
-    padding: 3px 10px;
-    background-color: white;
+
+.open {
+    padding: 0 8px;
+    color: #C2DEDC;
+    background-color: #0F1035;
     border-radius: 5px;
-} */
+    cursor: pointer;
+    font-size: 25px;
+}
+.close {
+    position: absolute;
+    top: 1.5vh;
+    right: 1.5vh;
+    color: #C2DEDC;
+    font-size: 50px;
+    cursor: pointer;
+}
 .fondo{
     height: 100%;
     width: 100%;
@@ -84,27 +78,47 @@ i {
     background-color: rgba(0, 0, 0, .7);
     display: flex;
     justify-content: center;
-    border-style: none;
+    transition: .1s linear;
     visibility: hidden;
 }
 .window{
-    margin: 7vh;
+    margin: 7vh 5vw;
     padding: 4vh 5vh;
     height: 81vh;
     width: 120vh;
-    background-color: blue;
+    background-color: #535C91;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 3fr 2fr;
     border-radius: 15px;
+    gap: 20px;
 }
 .window--image{
     border-radius: 10px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 110%;
+    background-size: 98%;
 }
 .window--text {
     border-radius: 10px;
-    background: #fff;
-    font-size: 30px;
+    color: #F3EEEA;
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.window--text p{
+    margin: 23px 10px;
+}
+@media screen and (max-width: 720px){
+    .fondo{
+        align-items: center;
+    }
+    .window {
+        padding: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 2fr;
+    }
+    .window--image{
+        background-size: 70%;
+    }
 }
