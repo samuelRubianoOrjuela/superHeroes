@@ -5,7 +5,7 @@ const data = [
 		image: "marvel/spidey.png",
 		color: "#bd0003",
 		universe: "marvel",
-		about: "<b>- Creadores:</b> Stan Lee y Steve Ditko.<br><br><b>- Lanzamiento:</b> Apareció por primera vez en el cómic Amazing Fantasy n.° 15, publicado por Marvel Comics en agosto de 1962.<br><br><b>- Habilidades:</b> La fuerza, el combate y la inteligencia, además de ser capaz de producir y lanzar telarañas sintéticas con ayuda de unos lanzadores que van sujetos a sus muñecas; trepar, adherirse y desplazarse a través de muros y edificaciones; y percibir peligros y amenazas a su alrededor de forma precognitiva gracias a su 'sentido arácnido'."
+		about: "<b>- Creadores:</b> Stan Lee y Steve Ditko.<br><br><b>- Lanzamiento:</b> Apareció por primera vez en el cómic Amazing Fantasy n.° 15, publicado en agosto de 1962.<br><br><b>- Habilidades:</b> La fuerza y la inteligencia, además de ser capaz de producir y lanzar telarañas sintéticas con ayuda de unos lanzadores que van sujetos a sus muñecas; trepar, adherirse a muros y edificaciones; y percibir peligros y amenazas de forma precognitiva conn su 'sentido arácnido'."
 	},
 	{
 		name: "Hulk",
