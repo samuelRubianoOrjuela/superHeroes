@@ -9,7 +9,15 @@
     <title>Super Heroes</title>
 </head>
 <body>
-    <section class="marvel_section">
+    <div class="search">
+        <input type="text" id="name">
+        <select name="select_universe" id="select_universe">
+            <option value="ambos">Universos</option>
+            <option value="marvel">Marvel</option>
+            <option value="dc">Dc</option>
+        </select>
+    </div>
+    <section class="section marvel_section">
         <div class="title marvel_title">
             <img src="./images/logoMarvel.png" alt="logo marvel" class="logo marvel_logo">
             <span>Marvel Comics</span>
@@ -17,7 +25,7 @@
         <div class="container marvel_container">
         </div>
     </section>
-    <section class="dc_section">
+    <section class="section dc_section">
         <div class="title dc_title">
             <img src="./images/logoDc.png" alt="logo dc" class="logo dc_logo">
             <span>DC Comics</span>

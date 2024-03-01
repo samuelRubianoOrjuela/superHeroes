@@ -243,15 +243,14 @@ const data = [
 function cargarData(heroes) {
 	
 	heroes.forEach((hero) => {
-		const container = document.querySelector(`.${hero.universe}_container`);
 		const card = document.createElement("div");
-		card.classList.add("card");
-	
+		card.classList.add("card", `${hero.class}_card`);
+		
 		const image = document.createElement("div");
 		image.classList.add("image");
 		image.style.backgroundImage = `url(https://samuelrubianoorjuela.github.io/fotosHeroes/${hero.image})`;
 		image.style.backgroundColor = `${hero.color}`;
-	
+		
 		const info = document.createElement("div");
 		const name = document.createElement("h3");
 		const btnOpen = document.createElement("span");
@@ -293,8 +292,8 @@ function cargarData(heroes) {
 		windowText.append(title, text);
 		window.append(windowImage, windowText, btnClose);
 		back.append(window);
-		container.append(card, back);
-
+		document.querySelector(`.${hero.universe}_container`).append(card, back);
+		
 		btnOpen.addEventListener('click', () => {
 			back.style.opacity = '1'
 			back.style.visibility = 'visible'
@@ -305,6 +304,50 @@ function cargarData(heroes) {
 		})
 	});
 } 
-const marvel = data.filter(hero => 	hero.universe === 'marvel' )
-const dc = data.filter(hero => 	hero.universe === 'dc' )
+const a = data.filter(hero => 	hero.universe === 'marvel' )
+const b = data.filter(hero => 	hero.universe === 'dc' )
 cargarData(data);
+
+
+const marvel = document.querySelector('.marvel_section');
+const dc = document.querySelector('.dc_section');
+
+document.getElementById('select_universe').addEventListener('change', function (){
+	let selected = (this.value === 'marvel') ? () => {
+		marvel.style.display = 'block'
+		dc.style.display = 'none'
+		
+	} : (this.value === 'dc' ? () => {
+		dc.style.display = 'block'
+		marvel.style.display = 'none'
+		
+	} : () => {
+		marvel.style.display = 'block'
+		dc.style.display = 'block'
+
+	});
+	selected();
+});
+
+let searchInput = document.getElementById('name');
+
+searchInput.addEventListener('input', function() {
+	let textoIngresado = searchInput.value.toLowerCase();
+	// document.getElementsByClassName('title').style.display = 'none'
+	document.querySelectorAll('.title').forEach(title => {
+		title.style.display = 'none'
+	});
+	// console.log(textoIngresado);
+	data.forEach((hero) => {
+		document.querySelector(`.${hero.class}_card`).style.display = 'flex'
+		if (!hero.name.toLowerCase().includes(textoIngresado)){
+			// document.getElementsByClassName(`${hero.class}_card`).style.display = 'none'
+			document.querySelector(`.${hero.class}_card`).style.display = 'none'
+		}
+		if (textoIngresado.length === 0){
+			document.querySelectorAll('.title').forEach(title => {
+				title.style.display = 'flex'
+			});
+		}
+	});
+});
