@@ -333,15 +333,12 @@ let searchInput = document.getElementById('name');
 
 searchInput.addEventListener('input', function() {
 	let textoIngresado = searchInput.value.toLowerCase();
-	// document.getElementsByClassName('title').style.display = 'none'
 	document.querySelectorAll('.title').forEach(title => {
 		title.style.display = 'none'
 	});
-	// console.log(textoIngresado);
 	data.forEach((hero) => {
 		document.querySelector(`.${hero.class}_card`).style.display = 'flex'
 		if (!hero.name.toLowerCase().includes(textoIngresado)){
-			// document.getElementsByClassName(`${hero.class}_card`).style.display = 'none'
 			document.querySelector(`.${hero.class}_card`).style.display = 'none'
 		}
 		if (textoIngresado.length === 0){
